@@ -1,0 +1,31 @@
+ALGORITHM checkpoints
+VAR
+    tab : ARRAY_OF INTEGER[50];
+    tab2 : ARRAY_OF INTEGER[50];
+    i,j,occ:INTEGER
+    sum:INTEGER=0
+    
+BEGIN
+    Read (tab)
+    Read (tab2)
+    FOR i FROM 0 TO tab.length-1 STEP 1  DO
+      occ:=0
+
+      FOR j FROM 0 TO tab2.length-1 STEP 1  DO
+        
+              IF (tab[i] = tab2[j]) THEN  
+                occ:=1
+        
+             END_IF
+
+      END_FOR
+      
+      IF (occ=1) THEN 
+        sum:= sum + tab[i]*2
+        
+      END_IF
+
+    END_FOR
+
+    Write ("the sum of all elements repeated :",sum)
+END
